@@ -2,13 +2,13 @@
 
 require "config.php";
 
-use App\Student;
+use App\Pet;
 
-// Remove Student record, and automatically redirect to index
+// Remove Pet record, and automatically redirect to index
 
 try {
 	$id = $_GET['id'];
-	$result = Student::deleteById($id);
+	$result = Pet::deleteById($id);
 
 	if ($result) {
 		header('Location: index.php');
@@ -18,4 +18,3 @@ try {
 	error_log($e->getMessage());
 	echo "<h1 style='color: red'>" . $e->getMessage() . "</h1>";
 }
-
